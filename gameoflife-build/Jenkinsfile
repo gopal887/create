@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage('build'){
+            steps{
+                sh 'sudo apt update'
+                sh 'sudo apt install openjdk-11-jdk -y'
+            }
+        }
+        stage('test'){
+            sh 'mvn package'
+            sh 'install mvn package'
+        }
+    }
+}
